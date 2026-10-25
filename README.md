@@ -1,6 +1,10 @@
 # Free-RSI
 
-Existing approaches to recursive self-improvement (RSI) of agent harnesses typically involve multiple rounds of training iterations, each followed by a proposal validation step to evaluate whether the candidate harness should be accepted. However, these validation steps introduce sequential dependencies across iterations, preventing parallel execution and thereby incurring substantial computational overhead and significantly slowing down harness optimization. To address this limitation, we investigate the behavior of RSI when **training-time proposal validation (TPV)** is removed and observe that eliminating TPV leads to overfitting. Inspired by the principle of **residual connections**, we propose **Free-RSI**, a TPV-free framework that mitigates overfitting through an adaptive look-back mechanism. Specifically, Free RSI adaptively determines whether to incorporate the harness state from the previous iteration when accepting the current harness update, enabling more efficient and robust recursive self-improvement without relying on costly training-time proposal validation.
+Free-RSI investigates the cost and behavior of recursive self-improvement of agent safety harnesses when training-time proposal validation (TPV) is removed or replaced. Historical review is a research hypothesis for retaining useful evidence across updates. Existing experiments are exploratory: they have not established that removing TPV causes overfitting, or that adaptive historical review reliably improves safety, utility, transfer, or efficiency.
+
+**Status, updated October 25, 2026:** experiments are paused following the October 24 review. The latest interpretation is recorded in the [stage summary](docs/stage-summary-20261024.md), with [selected complete final answers](docs/selected-outputs-20261024.md). The sections below retain the earlier baseline results and historical method description; they do not establish a validated final method.
+
+This repository contains documentation only. Code, datasets, complete trajectories, harness artifacts, and backup archives belong to the private [Free-RSI_exp experiment repository](https://github.com/yuranqiu/Free-RSI_exp).
 
 ## 1. Current Experiments
 
